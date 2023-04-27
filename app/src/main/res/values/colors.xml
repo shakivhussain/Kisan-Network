@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="transparent">#0000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="mediumGraySubtitle">#777777</color>
+    <color name="darkGrayTitle">#333333</color>
+    <color name="electricPurpleLight">#d37dfb</color>
+    <color name="vibrantOrangeLight">#ffd04d</color>
+    <color name="brightSkyBlueLight">#5dc7ff</color>
+</resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="HeadingSemiBold_18">
+        <item name="font">@font/semibold</item>
+        <item name="android:textSize">@dimen/textHeading</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="HeadingSemiBold_26">
+        <item name="font">@font/bold</item>
+        <item name="android:textSize">@dimen/textSize26</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="HeadingSemiBold_36">
+        <item name="font">@font/bold</item>
+        <item name="android:textSize">@dimen/textSize26</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="HeadingSemiBold_20">
+        <item name="font">@font/bold</item>
+        <item name="android:textSize">@dimen/textSize20</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="HeadingSemiBold_16">
+        <item name="font">@font/bold</item>
+        <item name="android:textSize">@dimen/textSize16</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="HeadingSemiBold_10">
+        <item name="font">@font/bold</item>
+        <item name="android:textSize">@dimen/textSize10</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="SubHeading_12">
+        <item name="font">@font/regular</item>
+        <item name="android:textSize">@dimen/textSubHeading</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="SubHeading_16">
+        <item name="font">@font/regular</item>
+        <item name="android:textSize">@dimen/textSize18</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="SubHeading_14">
+        <item name="font">@font/regular</item>
+        <item name="android:textSize">@dimen/textSize14</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    // Italic
+
+    <style name="HeadingItalicLight_16">
+        <item name="font">@font/extra_light_italic</item>
+        <item name="android:textSize">@dimen/textSize16</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+
+    <style name="HeadingBoldItalicLight_16">
+        <item name="fontFamily">@font/bold_italic</item>
+        <item name="android:textSize">@dimen/textSize16</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+</resources>

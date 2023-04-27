@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Kisan Network</string>
+    <string name="call">Call</string>
+    <string name="contact_info">Contact Info</string>
+    <string name="contact_detail">Contact Detail</string>
+    <string name="send_message">Send Message</string>
+    <string name="placeholder">hello placeholder</string>
+</resources>
