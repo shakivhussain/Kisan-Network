@@ -8,13 +8,19 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.shakiv.husain.kisannetwork.KisanApplication
 import com.shakiv.husain.kisannetwork.R
 import com.shakiv.husain.kisannetwork.data.model.Contact
 import com.shakiv.husain.kisannetwork.databinding.FragmentContactDetailsBinding
 import com.shakiv.husain.kisannetwork.ui.home.ContactListFragment.Companion.KEY_CONTACT
+import com.shakiv.husain.kisannetwork.ui.home.ContactViewModel
+import com.shakiv.husain.kisannetwork.ui.viewmodel.ViewModelFactory
 import com.shakiv.husain.kisannetwork.utils.navigateToDestination
 import com.shakiv.husain.kisannetwork.utils.toast
+import javax.inject.Inject
 
 class ContactDetailsFragment : Fragment() {
 
@@ -22,8 +28,12 @@ class ContactDetailsFragment : Fragment() {
     private var rootView: ConstraintLayout? = null
     var contact: Contact? = null
 
+    @Inject lateinit var viewModelFactory: ViewModelFactory
+    lateinit var contactViewModel: ContactViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        init()
         contact = arguments?.getSerializable(KEY_CONTACT) as? Contact
     }
 
@@ -48,6 +58,14 @@ class ContactDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         bindViews()
         bindListener()
+        bindObserver()
+    }
+
+    private fun bindObserver() {
+        val updatedContact = contact?.also { contact ->
+            contact.openedAt = System.currentTimeMillis()
+        }
+        contactViewModel.addContact(contact = updatedContact ?: return)
     }
 
     private fun bindListener() {
@@ -82,5 +100,27 @@ class ContactDetailsFragment : Fragment() {
                 tvName.text = fullName
             }
         }
+    }
+
+    companion object {
+        fun open(
+            navController: NavController,
+            contact: Contact,
+        ) {
+            navigate(navController, getArgs(contact))
+        }
+
+        private fun getArgs(contact: Contact) = Bundle().apply {
+            putSerializable(KEY_CONTACT, contact)
+        }
+
+        private fun navigate(controller: NavController, bundle: Bundle) {
+            controller.navigate(R.id.action_global_detail_contact, bundle)
+        }
+    }
+
+    private fun init() {
+        (this.activity?.application as KisanApplication).appComponent.inject(this)
+        contactViewModel = ViewModelProvider(this, viewModelFactory)[ContactViewModel::class.java]
     }
 }

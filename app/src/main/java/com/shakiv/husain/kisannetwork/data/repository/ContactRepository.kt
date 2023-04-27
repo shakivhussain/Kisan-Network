@@ -6,6 +6,7 @@ import com.google.gson.Gson
 import com.google.gson.JsonParseException
 import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
+import com.shakiv.husain.kisannetwork.data.db.ContactDatabase
 import com.shakiv.husain.kisannetwork.data.model.Contact
 import com.shakiv.husain.kisannetwork.data.network.Resource
 import kotlinx.coroutines.Dispatchers
@@ -14,15 +15,7 @@ import kotlinx.coroutines.withContext
 import java.io.FileNotFoundException
 import javax.inject.Inject
 
-class ContactRepository @Inject constructor(private val context: Context) {
-
-    private suspend fun readJsonFromAssets(fileName: String): String {
-        return withContext(Dispatchers.IO) {
-            val assetManager = context.assets
-            val inputStream = assetManager.open(fileName)
-            inputStream.bufferedReader().use { it.readText() }
-        }
-    }
+class ContactRepository @Inject constructor(private val context: Context, private val contactDatabase: ContactDatabase) {
 
     fun getContacts() = flow {
         emit(Resource.Loading())
@@ -44,6 +37,23 @@ class ContactRepository @Inject constructor(private val context: Context) {
         } catch (e: Exception) {
             Log.e("Repository", "Error: ${e.message}")
             emit(Resource.Failure())
+        }
+    }
+
+    suspend fun addContact(contact: Contact){
+        contactDatabase.getContactDao().addContact(contact = contact)
+    }
+
+    fun getAllContactLocalContacts()= flow<List<Contact>> {
+        val allContact = contactDatabase.getContactDao().getAllContacts()
+        emit(allContact)
+    }
+
+    private suspend fun readJsonFromAssets(fileName: String): String {
+        return withContext(Dispatchers.IO) {
+            val assetManager = context.assets
+            val inputStream = assetManager.open(fileName)
+            inputStream.bufferedReader().use { it.readText() }
         }
     }
 }

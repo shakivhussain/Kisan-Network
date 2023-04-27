@@ -1,4 +1,4 @@
-package com.shakiv.husain.kisannetwork
+package com.shakiv.husain.kisannetwork.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -14,6 +14,4 @@ class AuthViewModel @Inject constructor(private val authRepository: AuthReposito
         return authRepository.sendSms(to,body)
     }
 
-
-
 }

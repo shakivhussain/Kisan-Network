@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_nav_graph"
-    app:startDestination="@id/contactListFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/contactListFragment"
@@ -26,6 +26,15 @@
         android:id="@+id/sendMessageFragment"
         android:name="com.shakiv.husain.kisannetwork.ui.sendmessage.SendMessageFragment"
         android:label="SendMessageFragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        app:launchSingleTop="true"
+        android:name="com.shakiv.husain.kisannetwork.ui.home.HomeFragment"
+        android:label="HomeFragment" />
 
+    <action
+        android:id="@+id/action_global_detail_contact"
+        app:destination="@id/contactDetailsFragment"
+        />
 
 </navigation>

@@ -8,6 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.SimpleItemAnimator
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 
 inline fun <reified T> T?.toStringOrEmpty(): String {
@@ -36,3 +41,13 @@ fun Fragment.toast(activity: Context, message:String){
     Toast.makeText(activity, "$message", Toast.LENGTH_SHORT).show()
 }
 
+
+fun Long.toFormattedDateTime(): String {
+    val sdf = SimpleDateFormat("hh:mm:ss a \n dd/MM/yyyy", Locale.getDefault())
+    val date = Date(this)
+    return sdf.format(date)
+}
+
+fun RecyclerView.itemAnimationDisable() {
+    (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+}

@@ -15,11 +15,10 @@ import com.shakiv.husain.kisannetwork.R
 import com.shakiv.husain.kisannetwork.data.model.Contact
 import com.shakiv.husain.kisannetwork.data.network.Resource
 import com.shakiv.husain.kisannetwork.databinding.FragmentSendMessageBinding
-import com.shakiv.husain.kisannetwork.ui.home.ContactAdapter
 import com.shakiv.husain.kisannetwork.ui.home.ContactListFragment.Companion.KEY_CONTACT
-import com.shakiv.husain.kisannetwork.ui.home.ContactViewModel
 import com.shakiv.husain.kisannetwork.ui.viewmodel.AuthViewModel
 import com.shakiv.husain.kisannetwork.ui.viewmodel.ViewModelFactory
+import com.shakiv.husain.kisannetwork.utils.logd
 import com.shakiv.husain.kisannetwork.utils.toast
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -81,6 +80,7 @@ class SendMessageFragment : Fragment() {
     private fun sendMessage() {
         val otpText = binding.tvOtpMessage.text.toString()
         val contactNumber = contact?.number ?: ""
+
         lifecycleScope.launch {
             authViewModel.sendSms(contactNumber, otpText).collectLatest {
 
@@ -91,15 +91,19 @@ class SendMessageFragment : Fragment() {
                     is Resource.Success -> {
                         toast(activity ?: return@collectLatest, "Otp successfully sent.")
                         binding.sendMessageButton.isEnabled = true
+                        binding.sendMessageButton.alpha = 1f
 
                     }
                     is Resource.Loading -> {
                         binding.sendMessageButton.isEnabled = false
+                        binding.sendMessageButton.alpha = 0.5f
 
                     }
 
                     is Resource.Failure -> {
                         binding.sendMessageButton.isEnabled = true
+                        binding.sendMessageButton.alpha = 1f
+
                         toast(activity ?: return@collectLatest, "Something went wrong.")
                     }
                 }

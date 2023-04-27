@@ -14,8 +14,10 @@
         android:background="@drawable/background_profile"
         android:gravity="center"
         android:maxLength="1"
+        android:textColor="@color/white"
         android:padding="4dp"
         android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="T" />
@@ -25,13 +27,34 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center_vertical"
+        android:maxLength="25"
         android:paddingStart="16dp"
+        android:ellipsize="end"
         android:textStyle="bold"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@+id/tvProfile"
+        app:layout_constraintEnd_toStartOf="@+id/tvTime"
+        app:layout_constraintStart_toEndOf="@+id/tvProfile"
+        app:layout_constraintTop_toTopOf="@+id/tvProfile"
+        tools:text="Shakiv Husain"
+        tools:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        style="@style/SubHeading_12"
+        android:textSize="10sp"
+        android:maxLength="25"
+        android:visibility="gone"
+        tools:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvProfile"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Title"
-        tools:textSize="16sp" />
+        tools:text="Shakiv  \n Husain " />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

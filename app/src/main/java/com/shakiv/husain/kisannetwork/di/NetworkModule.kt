@@ -1,6 +1,6 @@
 package com.shakiv.husain.kisannetwork.di
 
-import com.shakiv.husain.kisannetwork.AppConstants
+import com.shakiv.husain.kisannetwork.utils.AppConstants
 import com.shakiv.husain.kisannetwork.data.api.AuthService
 import dagger.Module
 import dagger.Provides
@@ -12,7 +12,6 @@ import javax.inject.Singleton
 
 @Module
 class NetworkModule {
-
 
     @Singleton
     @Provides
@@ -36,7 +35,6 @@ class NetworkModule {
             chain.proceed(request)
         }
         .build()
-
 
     @Singleton
     @Provides
