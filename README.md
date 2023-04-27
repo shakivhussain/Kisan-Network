@@ -19,9 +19,9 @@ This Android application is developed using the Kotlin language and utilizes var
 
 
 ## Conclusion 🙌
-Overall, this Android application is designed to provide an efficient and user-friendly experience for managing contacts and communication via SMS. 
-By utilizing the latest technologies and architecture patterns, the application is more scalable, maintainable, and robust. 
-The use of Twilio for SMS messaging, along with Material Components for Android, makes for a modern and consistent user interface. With Room, Dagger 2, Retrofit, Navigation Component, MVVM architecture, Android Architecture Components, Coroutines, Flow, and ViewBinding, this application provides a well-organized and efficient codebase.
+ - Overall, this Android application is designed to provide an efficient and user-friendly experience for managing contacts and communication via SMS. 
+ - By utilizing the latest technologies and architecture patterns, the application is more scalable, maintainable, and robust. 
+ - The use of Twilio for SMS messaging, along with Material Components for Android, makes for a modern and consistent user interface. With Room, Dagger 2, Retrofit, Navigation Component, MVVM architecture, Android Architecture Components, Coroutines, Flow, and ViewBinding, this application provides a well-organized and efficient codebase.
 
 
 ## Download 📥
