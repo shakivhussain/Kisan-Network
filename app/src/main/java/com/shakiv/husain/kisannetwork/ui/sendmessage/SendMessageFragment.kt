@@ -89,7 +89,7 @@ class SendMessageFragment : Fragment() {
 
                 when (it) {
                     is Resource.Success -> {
-                        toast(activity ?: return@collectLatest, "Otp successfully sent.")
+                        toast(activity ?: return@collectLatest, "OTP Successfully Sent.")
                         binding.sendMessageButton.isEnabled = true
                         binding.sendMessageButton.alpha = 1f
 
@@ -104,7 +104,7 @@ class SendMessageFragment : Fragment() {
                         binding.sendMessageButton.isEnabled = true
                         binding.sendMessageButton.alpha = 1f
 
-                        toast(activity ?: return@collectLatest, "Something went wrong.")
+                        toast(activity ?: return@collectLatest, "Something Went Wrong.")
                     }
                 }
             }

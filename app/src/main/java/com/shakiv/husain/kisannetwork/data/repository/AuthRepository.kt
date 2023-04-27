@@ -34,7 +34,7 @@ class AuthRepository @Inject constructor(
             emit(Resource.Success(data))
         } catch (e: Exception) {
             e.printStackTrace()
-            emit(Resource.Success(null, e.localizedMessage))
+            emit(Resource.Failure(null, e.localizedMessage))
         }
 
     }
